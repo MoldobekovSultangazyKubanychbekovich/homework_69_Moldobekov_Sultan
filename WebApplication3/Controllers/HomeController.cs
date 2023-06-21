@@ -14,7 +14,9 @@ namespace WebApplication3.Controllers
         public IActionResult Index()
         {
             IndexViewModel ivm = new IndexViewModel();
-            return View("Main", ivm);
+            ViewResult result = View("Main", ivm);
+            result.StatusCode = 200;
+            return result;
         }
 
         public IActionResult Privacy()
