@@ -13,7 +13,8 @@ namespace WebApplication3.Controllers
     {
         public IActionResult Index()
         {
-            return View("Main");
+            IndexViewModel ivm = new IndexViewModel();
+            return View("Main", ivm);
         }
 
         public IActionResult Privacy()
