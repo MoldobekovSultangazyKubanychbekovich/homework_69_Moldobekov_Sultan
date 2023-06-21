@@ -16,6 +16,7 @@ namespace WebApplication3.Controllers
             IndexViewModel ivm = new IndexViewModel();
             ViewResult result = View("Main", ivm);
             result.StatusCode = 200;
+            ViewData["Message"] = "Добрый день, это тестовый текст на главной странице";
             return result;
         }
 
