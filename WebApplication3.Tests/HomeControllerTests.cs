@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Xunit;
 using WebApplication3.Controllers;
-
+using WebApplication3.Models;
 
 namespace WebApplication3.Tests
 {
@@ -32,7 +32,14 @@ namespace WebApplication3.Tests
             Assert.EndsWith("сайта.", result?.ViewData["Policy"] as string);
             Assert.Equal(39, (result?.ViewData["Policy"] as string).Length);
         }
- 
-        
+
+        [Fact]
+        public void TestPageTest()
+        {
+            HomeController controller = new HomeController();
+            ViewResult result = controller.TestPage(2) as ViewResult;
+            Assert.Equal(typeof(TestPageViewModel), result.Model.GetType());
+            Assert.False(result?.Model is null);
+        }
     }
 }
