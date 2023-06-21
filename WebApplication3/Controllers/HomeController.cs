@@ -22,8 +22,8 @@ namespace WebApplication3.Controllers
 
         public IActionResult Privacy()
         {
-            ViewData["Policy"] = "Текст политики конфидециальности";
-            return View("Policy");
+            ViewData["Policy"] = "Текст политики конфидециальности сайта.";
+            return View("Privacy");
         }
 
         public IActionResult TestPage(int page)
